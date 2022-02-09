@@ -1,0 +1,7 @@
+---
+- name: Upload a new File
+  openplc_file_upload:
+    name: attackthis
+    file: attack.st
+    state: 'present'
+    description: ''

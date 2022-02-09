@@ -1,0 +1,7 @@
+---
+- name: Change settings
+  openplc_settings:
+    properties:
+      slave_polling_period: 101
+      dnp3_server_port: false
+    state: present

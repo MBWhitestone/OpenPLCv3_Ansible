@@ -1,0 +1,16 @@
+---
+#
+# Test of the Ansible plugin
+#
+- hosts: all
+  become: no
+  gather_facts: no
+  tasks:
+    - include_tasks: playbooks/measurements/addclient.yml
+  # - include_role:
+      # name: playbooks/upload_new_file
+      # name: playbooks/device
+      # name: playbooks/user
+      # name: playbooks/settings
+      # name: playbooks/hardware
+

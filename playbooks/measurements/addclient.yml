@@ -1,0 +1,26 @@
+---
+- name: Add some device
+  openplc_device:
+    device_name: Temp device
+    state: present
+    properties:
+      device_protocol: "TCP"
+      device_id: "688"
+      device_ip: "192.168.5.6"
+      device_port: "502"
+      device_baud: "115200"
+      device_parity: "None"
+      device_data: "8"
+      device_stop: "1"
+      device_pause: "0"
+      di_start: "1"
+      di_size: "8"
+      do_start: "1"
+      do_size: "8"
+      ai_start: "1"
+      ai_size: "8"
+      aor_start: "1"
+      aor_size: "8"
+      aow_start: "1"
+      aow_size: "8"
+

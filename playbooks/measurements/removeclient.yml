@@ -1,0 +1,7 @@
+---
+- name: Remove the new device
+  openplc_device:
+    device_name: Temp device
+    state: absent
+    properties:
+      invalid_property: these are not checked, just removing the device

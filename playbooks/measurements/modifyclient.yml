@@ -1,0 +1,9 @@
+
+---
+- name: Modify the new device
+  openplc_device:
+    device_name: Temp device
+    state: present
+    properties:
+      device_port: 506
+      # device_coolness: full # invalid property

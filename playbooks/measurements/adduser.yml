@@ -1,0 +1,10 @@
+- name: Adding new user
+  openplc_user:
+    user_name: jrealuser
+    properties:
+      full_name: Jan RealUser
+      user_password: "thisisnotapassword"
+      user_email: jan@realuser.be
+      file: playbooks/user/assets/purdue.png
+    state: present
+

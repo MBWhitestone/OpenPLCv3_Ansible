@@ -1,0 +1,6 @@
+---
+- name: Change hardware to Blank
+  openplc_hardware:
+    properties:
+      hardware_layer: blank
+    state: present # only valid state

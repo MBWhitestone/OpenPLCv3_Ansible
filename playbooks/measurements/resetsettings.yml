@@ -1,0 +1,11 @@
+- name: Change settings to begin state.
+  openplc_settings:
+    properties:
+      modbus_server_port: 502
+      dnp3_server_port: 20000
+      enip_server_port: 44818
+      pstorage_thread_poll: false
+      auto_run_text: false
+      slave_polling_period: 100
+      slave_timeout: 1000
+    state: present

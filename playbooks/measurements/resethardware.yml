@@ -1,0 +1,6 @@
+---
+- name: Change hardware back to Blank Linux
+  openplc_hardware:
+    properties:
+      hardware_layer: blank_linux
+    state: present

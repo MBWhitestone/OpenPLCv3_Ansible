@@ -1,0 +1,2 @@
+
+openplc ansible_host=<OpenPLC-IP-or-URL> http_port=<OpenPLC-port> ssh_user=<ssh-username> username=<OpenPLC-user> password=<Open-PLC-password-or-use-Ansible-secrets> ssh_port=<ssh-port>

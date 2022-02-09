@@ -1,0 +1,49 @@
+---
+- name: Change settings to all valid.
+  openplc_settings:
+    properties:
+      modbus_server_port: 502
+      dnp3_server_port: 20000
+      enip_server_port: 44818
+      pstorage_thread_poll: 10
+      auto_run_text: true
+      slave_polling_period: 100
+      slave_timeout: 1000
+    state: present # only valid state
+
+- name: Pause to check.
+  pause:
+    prompt: "Check whether all is checked."
+
+- name: Change settings
+  openplc_settings:
+    properties:
+      slave_polling_period: 101
+      dnp3_server_port: false
+    state: present
+
+- name: Pause to check.
+  pause:
+    prompt: "Check whether modifications work."
+
+- name: Change settings
+  openplc_settings:
+    properties:
+      enip_server_port:
+    state: present
+
+- name: Pause to check.
+  pause:
+    prompt: "Check whether empty modifications work."
+
+- name: Change settings to begin state.
+  openplc_settings:
+    properties:
+      modbus_server_port: 502
+      dnp3_server_port: 20000
+      enip_server_port: 44818
+      pstorage_thread_poll: false
+      auto_run_text: false
+      slave_polling_period: 100
+      slave_timeout: 1000
+    state: present

@@ -1,0 +1,7 @@
+- name: Mofifying user
+  openplc_user:
+    user_name: jrealuser
+    properties:
+      user_name: jfakeuser
+      full_name: Jan FakeUser
+    state: present

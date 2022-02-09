@@ -1,0 +1,7 @@
+---
+- name: Upload a new File
+  openplc_file_upload:
+    name: test_final
+    file: test.st
+    state: 'present'
+    description: ''

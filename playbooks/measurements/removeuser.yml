@@ -1,0 +1,6 @@
+- name: Removing user
+  openplc_user:
+    user_name: jfakeuser
+    properties:
+      invalid_property: does not matter
+    state: absent

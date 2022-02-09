@@ -1,0 +1,41 @@
+---
+# Layer options: ['blank', 'blank_linux', 'fischertechnik', 'neuron', 'pixtend',
+#                 'pixtend_2s', 'pixtend_21', 'rpi', 'rpi_old', 'simulink',
+#                 'simulink_linux', 'unipi', 'psm_linux', psm_win']
+- name: Change hardware to Blank
+  openplc_hardware:
+    properties:
+      hardware_layer: blank
+    state: present # only valid state
+
+- name: Pause to check.
+  pause:
+    prompt: "Check whether hardware is blank."
+
+- name: Change to psm
+  openplc_hardware:
+    properties:
+      hardware_layer: psm_linux
+      custom_layer_code: playbooks/hardware/assets/custom_layer.py
+    state: present
+
+- name: Pause to check.
+  pause:
+    prompt: "Check whether hardware is psm linux."
+
+- name: Keep  psm
+  openplc_hardware:
+    properties:
+      hardware_layer: psm_linux
+    state: present
+
+- name: Pause to check.
+  pause:
+    prompt: "Check whether print statement is visible."
+
+- name: Change hardware back to Blank Linux
+  openplc_hardware:
+    properties:
+      hardware_layer: blank_linux
+    state: present
+

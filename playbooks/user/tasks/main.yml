@@ -1,0 +1,41 @@
+---
+- name: Removing non-existent user
+  openplc_user:
+    user_name: Fake User
+    properties:
+      user_password: "@bcdef"
+      email: "unchecked@email"
+    state: absent
+
+- name: Adding new user
+  openplc_user:
+    user_name: jrealuser
+    properties:
+      full_name: Jan RealUser
+      user_password: "thisisnotapassword"
+      user_email: jan@realuser.be
+      file: playbooks/user/assets/purdue.png
+    state: present
+
+- name: Pause to check.
+  pause:
+    prompt: "Check whether jrealuser exists."
+
+- name: Mofifying user
+  openplc_user:
+    user_name: jrealuser
+    properties:
+      user_name: jfakeuser
+      full_name: Jan FakeUser
+    state: present
+
+- name: Pause to check.
+  pause:
+    prompt: "Check whether jfakeuser exists and jrealuser does not."
+
+- name: Removing user
+  openplc_user:
+    user_name: jfakeuser
+    properties:
+      invalid_property: does not matter
+    state: absent
